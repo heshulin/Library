@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录</title>
+    <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
+    <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
+    <meta name="author" content="Codrops"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/demo.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/component.css"/>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="http://www.yyyweb.com/demo/common/init.css">
+    <!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <meta name="keywords"
+          content="Flat Dark Web Login Form Responsive Templates, Iphone Widget Template, Smartphone login forms,Login form, Widget Template, Responsive Templates, a Ipad 404 Templates, Flat Responsive Templates"/>
+    <link href="/static/css/style.css" rel='stylesheet' type='text/css'/>
+    <!--webfonts-->
+
+    <!--//webfonts-->
+    <script src="/static/js/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="container demo-1">
+    <div class="content">
+
+        <div id="large-header" class="large-header">
+            <canvas id="demo-canvas" style="z-index: -1;position: absolute;"></canvas>
+
+            <h1 style="color: rgb(106,146,168)">图书管理系统</h1>
+            <div class="login-form">
+                <div class="head-info">
+                    <label class="lbl-1"> </label>
+                    <label class="lbl-2"> </label>
+                    <label class="lbl-3"> </label>
+                </div>
+                <div class="clear"></div>
+                <div class="avtar">
+                    <img src="/static/images/avtar.png"/>
+                </div>
+                <p id = "p-test" >   </p>
+                <input id="UserName" type="text">
+                <div class="key">
+                    <input id="PassWord" type="password">
+                </div>
+
+                <input id="button" type="button" value="登录">
+                <div class="signin">
+
+                </div>
+            </div>
+            <div class="copy-rights"></div>
+        </div>
+
+    </div>
+</div>
+<!-- /container -->
+<div style="position:fixed;height:90px;width:100%;left:0;bottom:5px;z-index:999">
+    <div class="footer-banner" style="width:728px; margin:0px auto"></div>
+</div>
+<script type="text/javascript">
+
+
+    $("#button").click(function () {
+        var UserName = document.getElementById("UserName").value;
+        var PassWord = document.getElementById("PassWord").value;
+        var url = "/dologin?UserNumber=" + UserName + "&PassWord=" + PassWord;
+        $.get(url, function (result) {
+            var obj = eval('(' + result + ')');
+            if(obj.state==0)
+            {
+                var test = document.getElementById("p-test");
+                test.innerHTML = "账号或密码错误"
+            }
+            else
+            {
+                var UserName = document.getElementById("UserName").value;
+                window.location.href="/user";
+            }
+        });
+    });
+</script>
+<script src="/static/js/TweenLite.min.js"></script>
+<script src="/static/js/EasePack.min.js"></script>
+<script src="/static/js/rAF.js"></script>
+<script src="/static/js/demo-1.js"></script>
+<script src="/static/js/jquery.min.js"></script>
+</body>
+</html>

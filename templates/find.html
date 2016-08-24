@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>图书</title>
+    <meta charset="utf-8">
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <!--theme-style-->
+    <link href="/static/css/style2.css" rel="stylesheet" type="text/css" media="all"/>
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!--fonts-->
+    <!--//fonts-->
+    <script src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/move-top.js"></script>
+    <script type="text/javascript" src="/static/js/easing.js"></script>
+    <!--script-->
+    <script src="/static/js/responsiveslides.min.js"></script>
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 1
+            $("#slider1").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });
+    </script>
+</head>
+<body>
+<!--header-->
+<div class="header">
+    <div class="slider">
+        <ul class="rslides" id="slider1">
+            <li>
+                <img src="/static/images/banner1.jpg" alt="">
+                <div class="header-matter">
+                    <h2>在线<span>图书</span></h2>
+                    <label class="make"> </label>
+                    <div class="matter-we">
+                        <a class="we-better" href="#">
+                            <span> </span>
+                        </a>
+                        <div class=" better">
+                            <label>管理系统</label>
+                            <p>2.0全新概念版，尽请期待！2.0全新概念版，尽请期待！2.0全新概念版，尽请期待！2.0全新概念版，尽请期待！2.0全新概念版，尽请期待！2.0全新概念版，尽请期待！</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </li>
+            <li><img src="/static/images/banner1.jpg" alt="">
+                <div class="header-matter">
+                    <h2>公告<span></span></h2>
+                    <label class="make"> </label>
+                    <div class="matter-we">
+                        <a class="we-better" href="#">
+                            <span> </span>
+                        </a>
+                        <div class=" better">
+                            <h4>在此</h4>
+                            <label>公布</label>
+                            <p>公告即将要提交的作业，公告即将要提交的作业，公告即将要提交的作业，公告即将要提交的作业，公告即将要提交的作业，公告即将要提交的作业</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+    <!---->
+    <div class="top-header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">注销</a>
+            </div>
+            <div class="top-nav">
+                <label class="menu"> </label>
+                <ul>
+                    <li><a href="#portfolio" class="scroll">你好 {{ UserNumber }}<span class="port-box"> </span></a></li>
+                    <li><a href="/user">主页<span> </span></a></li>
+                    <li><a href="/mybook">图书查询<span class="us-box"> </span></a></li>
+                    <li><a href="/mybook">借阅情况<span class="us-box"> </span></a></li>
+                    <!-- script-nav -->
+                    <script>
+                        $("label.menu").click(function () {
+                            $(".top-nav ul").slideToggle(700, function () {
+                            });
+                        });
+                    </script>
+                    <script type="text/javascript">
+                        jQuery(document).ready(function ($) {
+                            $(".scroll").click(function (event) {
+                                event.preventDefault();
+                                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+                            });
+                        });
+                    </script>
+                    <!-- //script-nav -->
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+</div>
+
+<!--//header-->
+<!--content-->
+<!---->
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        /*
+         var defaults = {
+         containerID: 'toTop', // fading element id
+         containerHoverID: 'toTopHover', // fading element hover id
+         scrollSpeed: 1200,
+         easingType: 'linear'
+         };
+         */
+
+        $().UItoTop({easingType: 'easeOutQuart'});
+
+    });
+</script>
+
+
+<!--//footer-->
+
+<div style="text-align: center;;position:relative;top:10px; width: 100% ">
+    <form action="/dofind" method="GET">
+        图书名字：<input name="BookName" type="text">
+        <input type="submit">
+    </form>
+</div>
+<div  style="text-align: center;background-color: black;position:relative;top:250px; width: 100% ">
+    <span style="text-align: center;width:50px;color: white; margin-top: 10px"> © 2016 Developed by He Shulin</span>
+    <br>
+    <span style="text-align: center;width:50px;color: white;">All Rights Reserved</span>
+    <br>
+    <a style="text-align: center;width:50px; color: red;target=" _blank" href="http://www.imudges.com">About Us</a>
+</div>
+
+</body>
+</html>
